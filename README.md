@@ -1,10 +1,12 @@
 # React JS E-Commerce App
 
-This website made with Vite, ReactJS, Firebase and Redux
 ![preview](https://user-images.githubusercontent.com/92743495/235304178-9b0247d0-0828-445e-9d86-ff5699f8e160.gif)
 
 ## Getting Started 
 
+This website made with Vite, ReactJS, Firebase and Redux.
+
+You can test it here (https://rustysym.github.io/reactjs-e-commerce-frontend/)
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/emrekalfa)
 
@@ -25,6 +27,7 @@ This website made with Vite, ReactJS, Firebase and Redux
 - Other pages like Category, Contact Us...
 - Footer
 - UI arrangement
+- Localstorage for theme
 
 ## Available Scripts
 
