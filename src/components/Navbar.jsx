@@ -66,7 +66,7 @@ function Navbar() {
 
             <ul className="hidden md:flex px-4 mr-auto ml-12 font-poppins space-x-8 mt-1">
               <li>
-                <a className="hover:text-green-600" href="/">
+                <a className="hover:text-green-600" href="#">
                   Home
                 </a>
               </li>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { cartAction } from '../redux/actions/cart';
 import { useDispatch } from 'react-redux';
 
@@ -12,7 +12,8 @@ function ProductItems({val}) {
   };
   return (
     <div className='mt-12 mx-2'>
-      <div className="w-72 h-[500px] max-w-sm rounded-lg shadow dark:shadow-slate-500 m-4 hover:border" onClick={()=> window.location = `detail/${val.id}`}>
+      <NavLink to={`/detail/${val.id}`}>
+      <div className="w-72 h-[500px] max-w-sm rounded-lg shadow dark:shadow-slate-500 m-4 hover:border" >
     <a href="#" className='flex justify-center bg-white rounded-lg mb-10'>
         <img className="p-8 rounded-t-lg h-64" src={val?.image} alt="product image" />
     </a>
@@ -36,7 +37,9 @@ function ProductItems({val}) {
             <span className="text-xl font-poppins ">{val?.price}$</span>
             <a className="text-black bg-custom-green hover:bg-custom-light-green focus:ring-2 focus:outline-none focus:bg-custom-dark-green font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer" onClick={()=>addCart()}>Add to cart</a>
     </div>
+    </NavLink>
     </div>
+    
   )
 }
 
