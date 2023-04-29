@@ -4,7 +4,7 @@
 
 ## Getting Started 
 
-This website made with Vite, ReactJS, Firebase and Redux.
+This website made with Vite, ReactJS, Firebase, Tailwind CSS and Redux.
 
 You can test it here (https://rustysym.github.io/reactjs-e-commerce-frontend/)
 
