@@ -27,7 +27,7 @@ You can test it here (https://rustysym.github.io/reactjs-e-commerce-frontend/)
 - Other pages like Category, Contact Us...
 - Footer
 - UI arrangement
-- Localstorage for theme
+- ~~Localstorage for theme~~
 
 ## Available Scripts
 
