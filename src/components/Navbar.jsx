@@ -8,7 +8,7 @@ import { getAuth, onAuthStateChanged,signOut } from "firebase/auth";
 
 function Navbar() {
   const navigate = useNavigate();
-  const [theme, setTheme] = useState(localStorage.theme);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const colorTheme = theme === "light" ? "dark" : "light"
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
@@ -30,7 +30,6 @@ function Navbar() {
   };
   
   const auth = getAuth();
-  
  useEffect(()=>{
   onAuthStateChanged(auth, (user) => {
     if (user) {
