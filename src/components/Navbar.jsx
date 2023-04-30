@@ -8,19 +8,24 @@ import { getAuth, onAuthStateChanged,signOut } from "firebase/auth";
 
 function Navbar() {
   const navigate = useNavigate();
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(localStorage.theme);
+  const colorTheme = theme === "light" ? "dark" : "light"
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
 
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [user,setUser] = useState(null)
+
+
   const changeTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(colorTheme);
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
+      localStorage.setItem('theme','dark')
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem('theme','light')
     }
   };
   
@@ -32,6 +37,8 @@ function Navbar() {
      setUser(user);
     } 
   });
+  changeTheme();
+ 
  },[])
 
   const searchPost = (e) => {
