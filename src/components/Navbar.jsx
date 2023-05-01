@@ -106,7 +106,7 @@ function Navbar() {
             </div>
 
             <div className="hidden xl:flex items-center space-x-5 ">
-              <a className="hover:text-gray-600" href="#" onClick={changeTheme}>
+              <a className="hover:text-gray-600"  onClick={changeTheme}>
                 {theme === "dark" ? <BsSun size={18} /> : <BsMoon size={18} />}
               </a>
               {/* Heart */}
