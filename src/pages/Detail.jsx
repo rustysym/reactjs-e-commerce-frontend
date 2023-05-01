@@ -11,13 +11,12 @@ function Detail() {
   const { product } = useSelector((state) => state.productDetail);
 
   const [count, setCount] = useState(0);
- 
+
   useEffect(() => {
     dispatch(productDetailAction(id));
   }, [dispatch]);
 
   const increment = (stock) => {
-    
     if (count <= stock) {
       setCount(count + 1);
     }
@@ -31,7 +30,7 @@ function Detail() {
     dispatch(cartAction(id, count));
     dispatch({ type: "DRAWER", payload: true });
   };
-  
+
   return (
     <div className="antialiased">
       <div className="py-16">
@@ -84,7 +83,7 @@ function Detail() {
             <div className="md:flex-1 px-4">
               <div className="flex justify-center">
                 <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4">
-                  <img  className="h-80" src={product?.image}/>
+                  <img className="h-80" src={product?.image} />
                 </div>
               </div>
             </div>
@@ -94,7 +93,10 @@ function Detail() {
               </h2>
               <p className="text-gray-500 text-sm">
                 By{" "}
-                <a href="#" className="text-custom-dark-green dark:text-custom-green hover:underline">
+                <a
+                  href="#"
+                  className="text-custom-dark-green dark:text-custom-green hover:underline"
+                >
                   ABC Company
                 </a>
               </p>
@@ -122,22 +124,25 @@ function Detail() {
 
               <div className="flex py-4 space-x-4">
                 <div className="flex mx-2 space-x-2 items-center">
-                  <CgMathMinus
-                    size={24}
-                    className="border rounded-full p-1 cursor-pointer"
-                    onClick={decrement}
-                  />
+                  <button onClick={decrement}>
+                    {" "}
+                    <CgMathMinus
+                      size={24}
+                      className="border rounded-full p-1 cursor-pointer"
+                    />
+                  </button>
                   <span className="text-xl select-none">{count}</span>
-                  <CgMathPlus
-                    size={24}
-                    className="border rounded-full p-1 cursor-pointer"
-                    onClick={()=> increment(product.rating.count)}
-                  />
+                  <button onClick={() => increment(product.rating.count)}>
+                    <CgMathPlus
+                      size={24}
+                      className="border rounded-full p-1 cursor-pointer"
+                    />
+                  </button>
                 </div>
                 <button
                   type="button"
                   className="h-14 px-6 py-2 font-semibold rounded-xl bg-custom-green hover:bg-custom-light-green text-black select-none"
-                  onClick={()=> addCart()}
+                  onClick={() => addCart()}
                 >
                   Add to Cart
                 </button>
