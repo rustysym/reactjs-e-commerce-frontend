@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import Cart from './components/Cart';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import Footer from './components/Footer';
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path='signup' element={<SignUp/>}/>
       </Routes>
       {drawer && <Cart/>}
+      <Footer/>
       </HashRouter>
     </div>
   )

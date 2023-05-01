@@ -25,7 +25,7 @@ You can test it here (https://rustysym.github.io/reactjs-e-commerce-frontend/)
 - User profile
 - Wishlist
 - Other pages like Category, Contact Us...
-- Footer
+- ~~Footer~~
 - UI arrangement
 - ~~Localstorage for theme~~
 
