@@ -58,7 +58,7 @@ function Navbar() {
     signOut(auth).then(() => {
         window.location.reload(true)
     }).catch((error) => {
-    // An error happened.
+    console.log(error)
     });
 }
   return (
