@@ -6,7 +6,7 @@
 
 This website made with Vite, ReactJS, Firebase, Tailwind CSS and Redux.
 
-You can test it here (https://rustysym.github.io/reactjs-e-commerce-web/)
+You can test it here (https://rustysym.github.io/reactjs-e-commerce-frontend/)
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/emrekalfa)
 
