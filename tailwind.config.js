@@ -13,6 +13,7 @@ export default {
       colors: {
         'custom-white':'#F6F6F6',
         'custom-dark':'#212121',
+        'custom-dark-second':'#2B2B2B',
         'custom-green':'#C1DCDC',
         'custom-light-green':'#D8DCDC',
         'custom-dark-green':'#b0c2c2',
