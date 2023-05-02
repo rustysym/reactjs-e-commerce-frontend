@@ -22,7 +22,7 @@ You can test it here (https://rustysym.github.io/reactjs-e-commerce-web/)
 ## Upcoming Features
 
 - Firestore Database for products
-- User profile
+- ~~User profile~~
 - Wishlist
 - Other pages like Category, Contact Us...
 - ~~Footer~~
