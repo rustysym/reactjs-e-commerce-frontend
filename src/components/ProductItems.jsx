@@ -14,7 +14,7 @@ function ProductItems({ val }) {
     <div className="mt-12 mx-2">
       <NavLink to={`/detail/${val.id}`}>
         <div className="w-72 h-[500px] max-w-sm rounded-lg shadow dark:shadow-slate-500 m-4 hover:border">
-          <a href="#" className="flex justify-center bg-white rounded-lg mb-10">
+          <a className="flex justify-center bg-white rounded-lg mb-10">
             <img
               className="p-8 rounded-t-lg h-64"
               src={val?.image}
@@ -22,7 +22,7 @@ function ProductItems({ val }) {
             />
           </a>
           <div className="px-5 pb-5">
-            <a href="#">
+            <a>
               <h5 className="text-base font-semibold tracking-tight ">
                 {val?.title}
               </h5>
