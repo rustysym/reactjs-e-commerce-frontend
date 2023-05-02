@@ -4,41 +4,39 @@ import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineSearch } from "react-icons/ai";
 import { searchAction } from "../redux/actions/search";
 import { NavLink, useNavigate } from "react-router-dom";
-import { getAuth, onAuthStateChanged,signOut } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 function Navbar() {
   const navigate = useNavigate();
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
-  const colorTheme = theme === "light" ? "dark" : "light"
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const colorTheme = theme === "light" ? "dark" : "light";
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
 
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [user,setUser] = useState(null)
-
+  const [user, setUser] = useState(null);
 
   const changeTheme = () => {
     setTheme(colorTheme);
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
-      localStorage.setItem('theme','dark')
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      localStorage.setItem('theme','light')
+      localStorage.setItem("theme", "light");
     }
   };
-  
+
   const auth = getAuth();
- useEffect(()=>{
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-     setUser(user);
-    } 
-  });
-  changeTheme();
- 
- },[])
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      }
+    });
+    changeTheme();
+  }, []);
 
   const searchPost = (e) => {
     if (e.key === "Enter") {
@@ -54,13 +52,16 @@ function Navbar() {
       setIsOpen(false);
     }
   };
-  const handleLogout = () => {               
-    signOut(auth).then(() => {
-        window.location.reload(true)
-    }).catch((error) => {
-    console.log(error)
-    });
-}
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        navigate("/", { replace: true });
+        window.location.reload(true);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="overflow-x-hidden">
       <section className="relative mx-auto my-12">
@@ -106,7 +107,7 @@ function Navbar() {
             </div>
 
             <div className="hidden xl:flex items-center space-x-5 ">
-              <a className="hover:text-gray-600"  onClick={changeTheme}>
+              <a className="hover:text-gray-600" onClick={changeTheme}>
                 {theme === "dark" ? <BsSun size={18} /> : <BsMoon size={18} />}
               </a>
               {/* Heart */}
@@ -178,14 +179,21 @@ function Navbar() {
                         />
                       </svg>
                     </button>
-                    <div className="hidden peer-hover:flex hover:flex absolute right-0 bg-white dark:bg-gray-700 min-w-[160px] shadow-xl z-10 rounded-lg ">
-                      
+                    <div className="hidden peer-hover:flex hover:flex absolute right-0 bg-white dark:bg-custom-dark-second min-w-[160px] shadow-xl z-10 rounded-lg ">
                       <div className="flex flex-col text-center w-full">
-                      <div className="my-2">
-                        <h1 className="text-center">{user?.email}</h1>
-                      </div>
-                        
-                        <button className="py-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-400" onClick={handleLogout}>
+                        <div className="my-2">
+                          <h1 className="text-center">{user?.email}</h1>
+                        </div>
+                        <NavLink
+                          to="/user"
+                          className={"hover:bg-gray-200 dark:hover:bg-gray-400"}
+                        >
+                          <button className=" py-4 rounded-lg">Settings</button>
+                        </NavLink>
+                        <button
+                          className="py-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-400"
+                          onClick={handleLogout}
+                        >
                           Sign Out
                         </button>
                       </div>
